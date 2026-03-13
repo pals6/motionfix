@@ -100,8 +100,8 @@ Then, you can use this checkpoint to extract samples and compute metrics as desc
 For MotionGPT3 motion-to-text labels over MotionFix source and target motions, use the integration script in the MotionGPT3 repo:
 
 ```bash
-cd /home/pbichpur/MotionGPT3
-/home/pbichpur/miniconda3/envs/mgpt/bin/python batch_motionfix_m2t_labels.py
+cd MotionGPT3
+python batch_motionfix_m2t_labels.py
 ```
 
 That script:
@@ -109,7 +109,7 @@ That script:
 - loads `data/motionfix-dataset/motionfix_test.pth.tar`
 - converts `motion_source` and `motion_target` joints to HumanML3D-style 263D features
 - runs MotionGPT3 motion-to-text on both motions
-- writes `/home/pbichpur/motionfix/exported_motionfix_humanml263/motionfix_motiongpt3_labels.csv`
+- writes `exported_motionfix_humanml263/motionfix_motiongpt3_labels.csv`
 
 CSV format:
 
