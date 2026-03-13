@@ -95,6 +95,28 @@ To get a checkpoint of our model and run inference, you can download it
 from [this link](https://drive.google.com/drive/folders/1M_i_zUSlktdEKf-xBF9g6y7N-lfDtuPD?usp=sharing).
 Then, you can use this checkpoint to extract samples and compute metrics as described below.
 
+## MotionFix to MotionGPT3 labeling
+
+For MotionGPT3 motion-to-text labels over MotionFix source and target motions, use the integration script in the MotionGPT3 repo:
+
+```bash
+cd /home/pbichpur/MotionGPT3
+/home/pbichpur/miniconda3/envs/mgpt/bin/python batch_motionfix_m2t_labels.py
+```
+
+That script:
+
+- loads `data/motionfix-dataset/motionfix_test.pth.tar`
+- converts `motion_source` and `motion_target` joints to HumanML3D-style 263D features
+- runs MotionGPT3 motion-to-text on both motions
+- writes `/home/pbichpur/motionfix/exported_motionfix_humanml263/motionfix_motiongpt3_labels.csv`
+
+CSV format:
+
+```text
+sample_id,edit_text,source_caption,target_caption,source_feature_path,target_feature_path
+```
+
 ### Step 1: Extract the samples
 
 ```bash

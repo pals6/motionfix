@@ -6,6 +6,8 @@ mfix-env
 /data
 .vscode
 /outputs
+/exported_motionfix_humanml263
+/exported_motionfix_joints
 deps/*
 !deps/transforms/
 !deps/smplh/
